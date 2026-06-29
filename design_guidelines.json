@@ -1,0 +1,93 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 2: The Performance Pro",
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#121212",
+    "surface_elevated": "#1A1A1A",
+    "primary": "#007AFF",
+    "primary_hover": "#005bb5",
+    "accent_positive": "#32D74B",
+    "accent_negative": "#FF453A",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A0A0A0",
+    "border": "rgba(255, 255, 255, 0.1)"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Barlow Condensed, sans-serif",
+      "style_rules": "Uppercase, tracking-tight, font-black. Used for main titles and stat callouts."
+    },
+    "body": {
+      "font_family": "Outfit, sans-serif",
+      "style_rules": "Clean, highly readable. Use tabular-nums for data tables."
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl uppercase tracking-tighter font-black",
+      "h2": "text-2xl sm:text-3xl uppercase tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl uppercase tracking-tight font-semibold",
+      "body": "text-base",
+      "small": "text-sm",
+      "overline": "text-xs uppercase tracking-[0.2em] text-gray-400"
+    }
+  },
+  "layout": {
+    "grid_system": "MODE B: THE 'CONTROL ROOM' GRID. Strict hierarchy, gap-4 to gap-6.",
+    "surface_strategy": "Flat solid surfaces with 1px border (border-white/10). No soft shadows. Use 'Inner Glow' (box-shadow: inset 0 1px 0 rgba(255,255,255,0.05)) for premium feel. Avoid glassmorphism for data clarity.",
+    "spacing": "Dense for data (tables p-2 to p-4), moderate for containers (p-6). Use p-8 for main sections.",
+    "navigation": "Left sidebar or dense top navbar with clear active states."
+  },
+  "components": {
+    "tables": "Shadcn Table. Dark background, hover rows (hover:bg-white/5), sticky headers. Tabular-nums for stats.",
+    "radar_chart": "Recharts RadarChart. Stroke #007AFF, Fill #007AFF with 0.3 opacity. Overlaid comparisons use #32D74B or #FF3B30.",
+    "buttons": "Sharp corners or max 4px radius. Primary buttons: bg-[#007AFF] text-white hover:bg-[#005bb5]. Secondary: bg-transparent border border-white/20 hover:border-white/50.",
+    "badges": "MLB Comp badge: solid gold/yellow accent or primary color, uppercase, bold.",
+    "video_upload": "Dashed border (border-dashed border-white/20), hover state glows primary color. Show processing state with 'ASCII-style' loading or terminal text effect."
+  },
+  "motion": {
+    "hover_states": "Crisp, fast transitions. duration-150. Slight border brightness increase.",
+    "list_transitions": "Staggered fade-in for recruit search results (Framer Motion).",
+    "data_loading": "Skeleton loaders matching the dark surface, with a subtle shimmer."
+  },
+  "media": {
+    "hero_background": "https://images.unsplash.com/photo-1660892425121-e7461fc9991c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxiYXNlYmFsbCUyMGZpZWxkJTIwbmlnaHQlMjBzdGFkaXVtfGVufDB8fHx8MTc4MjY4MTk2NXww&ixlib=rb-4.1.0&q=85",
+    "player_silhouette": "https://images.unsplash.com/photo-1633809786904-90d4c03ca502?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxiYXNlYmFsbCUyMGJhdHRlciUyMHN3aW5nJTIwc2lsaG91ZXR0ZXxlbnwwfHx8fDE3ODI2ODE5NjV8MA&ixlib=rb-4.1.0&q=85",
+    "baseball_texture": "https://images.unsplash.com/photo-1542050532925-05f490df593e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxiYXNlYmFsbCUyMGxvZ28lMjBiYWRnZXxlbnwwfHx8fDE3ODI2ODE5NjV8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "pages": {
+    "dashboard_search": {
+      "layout": "Top filters (Position, Region, Min OPS, Min Velo). Data table below with 20 rows. Clickable rows navigate to Profile."
+    },
+    "player_profile": {
+      "layout": "Bento Grid: Top left 'North Star' (Biomech Score & MLB Comp). Top right: Video clip. Bottom left: Radar Chart vs MLB. Bottom right: Granular stats.",
+      "actions": "'Add to Shortlist' prominent button."
+    },
+    "compare": {
+      "layout": "Side-by-side selectors. Central overlaid Radar Chart. Side-by-side stat tables with red/green highlights for the winner of each metric."
+    },
+    "scouting_board": {
+      "layout": "List/Grid of shortlisted players. Top right: 'Export PDF' button."
+    },
+    "video_upload": {
+      "layout": "Centered dropzone. Once uploaded, transitions into a split view: video on left, diagnostic cards (score, 2-3 feedback lines) on right."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure all text meets 4.5:1 ratio against #0A0A0A. Use bright status colors.",
+    "testing": "MUST include data-testid on all interactive elements (e.g., data-testid='recruit-search-input', data-testid='add-to-shortlist-btn')."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Stroke-based, consistent width. Use bright colors for status icons."
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts: Barlow Condensed and Outfit.",
+    "Set up Tailwind dark mode. Use pure black #0A0A0A as main bg, and #121212 for panels/cards.",
+    "Install Recharts for the radar chart in player profile.",
+    "Ensure all Shadcn components (tables, cards, inputs) are modified to use the 1px solid border style without soft shadows.",
+    "Include 'data-testid' on all buttons, links, and forms.",
+    "Use tabular-nums class for all statistics and numbers.",
+    "For the Map View, use a dark-themed SVG or Mapbox if applicable, otherwise a stylized placeholder.",
+    "The codebase uses .js extensions, ensure any new components are created as .js files, not .tsx."
+  ]
+}

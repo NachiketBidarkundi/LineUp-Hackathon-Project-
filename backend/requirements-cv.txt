@@ -1,0 +1,5 @@
+# Optional CV stack for REAL biomech analysis (MediaPipe pose pipeline).
+# Install on hosts that can run it:  pip install -r requirements-cv.txt
+# If absent, the backend automatically falls back to the mock analyzer.
+mediapipe==0.10.35
+opencv-python-headless==4.13.0.92

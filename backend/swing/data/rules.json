@@ -1,0 +1,41 @@
+{
+  "hip_shoulder_separation": {
+    "direction": "high_is_good",
+    "low_threshold_z": -1.0,
+    "low_diagnosis": "Limited hip-shoulder separation. Upper body rotates with hips, breaking the kinetic chain.",
+    "low_cost": "−6 mph exit velocity",
+    "low_fix": "Hold-the-wall drill — keep front shoulder closed until hips reach 80% rotation."
+  },
+  "head_stability": {
+    "direction": "low_is_good",
+    "high_threshold_z": 1.0,
+    "high_diagnosis": "Excessive head movement. You're pulling off the ball.",
+    "high_cost": "−0.04 batting average against fastballs",
+    "high_fix": "Chin-to-shoulder cue. Keep eyes level through contact."
+  },
+  "kinematic_sequence": {
+    "direction": "binary",
+    "binary_fail_diagnosis": "Out-of-sequence firing — hands or torso lead the hips.",
+    "binary_fail_cost": "−4 mph exit velocity",
+    "binary_fail_fix": "Tee work focused on hip-lead: 'hips fire first, then everything else.'",
+    "binary_pass_strength": "Correct firing order: hips → torso → hands."
+  },
+  "bat_speed_proxy": {
+    "direction": "high_is_good",
+    "low_threshold_z": -1.0,
+    "low_diagnosis": "Bat speed below elite range — limits exit velocity ceiling.",
+    "low_cost": "Lower power output across all pitch types",
+    "low_fix": "Overload/underload bat training (Driveline protocol)."
+  },
+  "swing_tempo": {
+    "direction": "neutral",
+    "low_threshold_z": -1.5,
+    "low_diagnosis": "Swing is rushed — less time to recognize and adjust to pitch.",
+    "low_cost": "Higher chase rate on breaking balls",
+    "low_fix": "Slow rhythm drill: count '1-2-swing' through the load.",
+    "high_threshold_z": 1.5,
+    "high_diagnosis": "Slow swing initiation — likely late on fastballs.",
+    "high_cost": "Reduced contact on 92+ mph fastballs",
+    "high_fix": "Earlier load — begin hand action when pitcher's lead foot lands."
+  }
+}

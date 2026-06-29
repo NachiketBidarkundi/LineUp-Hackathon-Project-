@@ -1,0 +1,22 @@
+{
+  "hip_shoulder_separation": {
+    "mean": 53.028,
+    "std": 8.0
+  },
+  "head_stability": {
+    "mean": 19.775,
+    "std": 3.0
+  },
+  "kinematic_sequence": {
+    "mean": 0.6,
+    "std": 0.548
+  },
+  "bat_speed_proxy": {
+    "mean": 27.395,
+    "std": 5.0
+  },
+  "swing_tempo": {
+    "mean": 14.8,
+    "std": 4.0
+  }
+}

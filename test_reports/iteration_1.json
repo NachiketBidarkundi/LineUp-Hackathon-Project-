@@ -1,0 +1,37 @@
+{
+  "summary": "First-finish smoke testing of Lineup baseball recruiting platform. Backend (11 critical endpoints) and frontend (all 7 routes + navigation) verified end-to-end against public URL. All core functionality works: 20 amateurs seeded, 5 MLB players with live_stats_loaded=true, biomech mock deterministic, PDF report 77KB with valid %PDF magic, filters narrow results, shortlist CRUD works, UI navigates all pages without console errors.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/stats/summary -> 200, total_players=20, includes regions/positions/avg_biomech",
+    "GET /api/players -> 200, envelope {players:[20], count:20}",
+    "GET /api/players?position=OF&region=TX&min_ops=1.0&min_exit_velo=95 -> 200, narrows to 2 players (amateur_001, amateur_013)",
+    "GET /api/players/amateur_001 -> 200, Jake Morrison, biomech=71, mlb_comp=Freddie Freeman, fit=86",
+    "GET /api/players/does_not_exist -> 404",
+    "GET /api/mlb-reference -> 200, {mlb_reference:[5]}, all 5 players live_stats_loaded=true (Judge/Trout/Betts/Soto/Freeman)",
+    "POST /api/shortlist/{id} -> idempotent (same id twice = single entry)",
+    "GET /api/shortlist -> 200, returns ordered list with full player docs",
+    "DELETE /api/shortlist/{id} -> 200, removes entry",
+    "POST /api/biomech/analyze?player_id=amateur_001 -> 200, score=71, 5 feature_scores with value/elite_avg/z_score, 2 diagnoses, 2 strengths",
+    "POST /api/biomech/analyze with file upload -> 200, valid result (score=76 for fake video)",
+    "GET /api/players/amateur_001/report -> 200, application/pdf, 77066 bytes, starts with %PDF-1.4",
+    "Frontend / -> hero 'SEE THE SWING' visible, CTA explore-recruits navigates to /search",
+    "Frontend /search -> 20 rows render via data-testid=row-*, region=TX filter narrows to 4 rows, row click navigates to /player/:id",
+    "Frontend /player/:id -> profile loads with Biomech content, Add to Shortlist & Re-run Biomech buttons functional",
+    "Frontend /mlb -> 5 mlb-card-* elements render",
+    "Frontend /compare -> picker-a and picker-b present",
+    "Frontend /shortlist -> page loads (empty state acceptable after toggle)",
+    "Frontend /upload -> upload-dropzone visible, Run Biomech Analysis button rendered",
+    "Top navigation (nav-search, nav-mlb, nav-compare, nav-shortlist, nav-upload) all functional with active highlight",
+    "No console errors during full UI walkthrough"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": [
+    "Backend wraps list responses in envelopes ({players, count} and {mlb_reference}) — frontend api.js consumers correctly unwrap these in Search/Compare/MlbReference/Shortlist pages.",
+    "Biomech analyze is a deterministic mock as documented — not flagged.",
+    "MLB Stats API live fetch succeeded for all 5 reference players during this run."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "Justin Upton": {
+    "hip_shoulder_separation": 36.614,
+    "head_stability": 23.5474,
+    "kinematic_sequence": 0.0,
+    "bat_speed_proxy": 21.281,
+    "swing_tempo": 5.0
+  },
+  "Andrew McCutchen": {
+    "hip_shoulder_separation": 47.6847,
+    "head_stability": 29.891,
+    "kinematic_sequence": 1.0,
+    "bat_speed_proxy": 19.4959,
+    "swing_tempo": 0.0
+  },
+  "Miguel Cabrera": {
+    "hip_shoulder_separation": 54.8712,
+    "head_stability": 21.7016,
+    "kinematic_sequence": 1.0,
+    "bat_speed_proxy": 19.936,
+    "swing_tempo": 20.0
+  },
+  "Javier B\u00e1ez": {
+    "hip_shoulder_separation": 93.4505,
+    "head_stability": 11.9781,
+    "kinematic_sequence": 1.0,
+    "bat_speed_proxy": 55.1732,
+    "swing_tempo": 28.0
+  },
+  "Troy Tulowitzki": {
+    "hip_shoulder_separation": 32.5206,
+    "head_stability": 11.7564,
+    "kinematic_sequence": 0.0,
+    "bat_speed_proxy": 21.0894,
+    "swing_tempo": 21.0
+  }
+}
